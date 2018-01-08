@@ -1,0 +1,900 @@
+*, :after, :before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*, a, button, i, input {
+	-webkit-font-smoothing: antialiased;
+}
+*, :active, :focus, :hover {
+	outline: 0!important;
+	-webkit-tap-highlight-color: transparent!important;
+}
+*, :after, :before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.max-width {
+	max-width: 100%;
+}
+
+.pad-zero{
+	padding-left: 0;
+    padding-right: 0;
+}
+
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+.text-left{
+	text-align: left !important;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    /*margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;*/
+}
+
+#banner,#bannerDetails {
+    background-attachment: fixed;
+    background-color: #272833;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+    min-height: 100vh;
+    position: relative;
+    text-align: center;
+    z-index: 21;
+}
+
+#banner h1,#banner h2,#banner h3,#banner h4,#banner h5,#banner h6,
+#bannerDetails h1,#bannerDetails h2,#bannerDetails h3,#bannerDetails h4,#bannerDetails h5,#bannerDetails h6 {
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+}
+
+#header {
+    background: rgba(39, 40, 51, 0.965);
+    box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
+    cursor: default;
+    height: 5.5rem;
+    left: 0;
+    line-height: 3.5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+body #header {
+    background: transparent;
+    box-shadow: none;
+    position: absolute;
+}
+
+#header h1#logo {
+	margin: 0;
+    padding: 1rem;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    height: inherit;
+    left: 2.5rem;
+    line-height: inherit;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    background-color: #f34e4e;
+    cursor: pointer;
+}
+
+#header h1#logo a {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem !important;
+    font: inherit;
+    vertical-align: baseline;
+    -moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    border-bottom: dotted 1px;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: 0;
+}
+
+#banner1:before {
+    content: '';
+    display: inline-block;
+    height: 100vh;
+    vertical-align: middle;
+    width: 1%;
+}
+
+#banner .content, #bannerDetails .content {
+    display: inline-block;
+    margin-right: 1%;
+    max-width: 100%;
+    padding: 1.8rem;
+    position: relative;
+    text-align: right;
+    vertical-align: middle;
+    z-index: 1;
+}
+
+#banner .content header, #bannerDetails .content header {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#banner h2, #bannerDetails  h2 {
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-size: 2em;
+    line-height: 1.5em;
+    letter-spacing: -0.025em;
+}
+
+#banner .content header h2, #bannerDetails .content header h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+#banner p, #bannerDetails p {
+	    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+        margin: 0 0 2em 0;
+}
+
+#banner header p, #bannerDetails header p {
+    color: #ffffff;
+    position: relative;
+    margin: 0 0 1.5em 0;
+}
+
+header h2 + p {
+    font-size: 1.25em;
+    margin-top: -1em;
+    line-height: 1.75em;
+}
+
+#banner .content header p, #bannerDetails .content header p {
+    margin: 0.5em 0 0 0;
+    top: 0;
+}
+
+#banner span , #bannerDetails span{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+#banner .image , #bannerDetails .image{
+    border-radius: 4px;
+    border: 0;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+#banner .content .image , #bannerDetails .content .image {
+    border-radius: 100%;
+    display: inline-block;
+    height: 18em;
+    margin-left: 3em;
+    vertical-align: middle;
+    width: 18em;
+}
+
+#banner .image:before , #bannerDetails .image:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#banner img, #bannerDetails img{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+#banner .image img,  #bannerDetails .image img {
+    border-radius: 4px;
+    display: block;
+}
+
+#banner .content .image img, #bannerDetails  .content .image img {
+    border-radius: 100%;
+    display: block;
+    width: 100%;
+}
+.summaryPage{
+	padding: 2rem;
+    padding-top: 10rem;
+}
+
+ #banner a,#banner span.next, #bannerDetails a,#bannerDetails span.next{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    
+    -moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    border-bottom: dotted 1px;
+    color: #e44c65;
+    text-decoration: none;
+    
+    cursor: pointer;
+}
+
+ #banner a.goto-next,#banner span.goto-next, #bannerDetails a.goto-next,#bannerDetails span.goto-next {
+    border: 0;
+    bottom: 0;
+    display: block;
+    height: 5em;
+    left: 50%;
+    margin: 0 0 0 -5em;
+    overflow: hidden;
+    position: absolute;
+    text-indent: 10em;
+    white-space: nowrap;
+    width: 10em;
+    z-index: 1;
+}
+ #banner a.goto-next:hover,  #bannerDetails  a.goto-next:hover,#banner span.goto-next:hover,  #bannerDetails  span.goto-next:hover  {
+    color: #e44c65 !important;
+    border-bottom-color: transparent;
+}
+
+.goto-next:before {
+    background-image: url(../img/arrow.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: block;
+    height: 1.5em;
+    left: 50%;
+    margin: -0.75em 0 0 -1em;
+    position: absolute;
+    top: 50%;
+    width: 2em;
+    z-index: 1;
+}
+
+section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    
+    display: block;
+    
+}
+
+section.wrapper {
+    padding: 3rem 0 2em 0;
+}
+
+section.special, article.special {
+    text-align: center;
+}
+
+div.container{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapper.fade-up > .container {
+    -moz-transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+    -moz-transition: -moz-transform 1s ease, opacity 1s ease;
+    -webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
+    -ms-transition: -ms-transform 1s ease, opacity 1s ease;
+    transition: transform 1s ease, opacity 1s ease;
+    opacity: 1;
+}
+
+header.major {
+	
+	    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    
+    display: block;
+	
+    margin: 0 0 1.2rem 0;
+    position: relative;
+    text-align: center;
+}
+
+header.major h2 {
+	    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+    
+    
+    font-size: 2em;
+    line-height: 1.5em;
+    letter-spacing: -0.025em;
+    
+    
+}
+
+header.major p{
+	    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    
+        margin: 0 0 2em 0;
+        
+        color: #ffffff;
+    position: relative;
+    margin: 0 0 1.5em 0;
+    
+        font-size: 1.25em;
+    margin-top: -1em;
+    line-height: 1.75em;
+}
+
+header.major:after {
+    /*background: #e44c65;*/
+    content: '';
+    display: inline-block;
+    height: 0.2em;
+    max-width: 20em;
+    width: 75%;
+    position: relative;
+    top: -10px;
+}
+
+div.box{
+	
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    
+    border-radius: 4px;
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    margin-bottom: 2em;
+    padding: 1.5em;
+    
+}
+
+.box.alt {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+}
+
+.spotlight {
+	
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+	
+    display: block;
+    
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    position: relative;
+    
+    z-index: 4;
+}
+
+#banner h2.sideBar, #bannerDetails h2.sideBar {
+	font-size: 1.2rem;
+}
+
+header.major.sideBar {
+    margin: 0 0 0.5rem 0;
+}
+
+header.major.sideBar:after {
+    background: #4c74e4;
+    content: '';
+    display: inline-block;
+    height: 0.1rem;
+    max-width: 20em;
+    width: 75%;
+}
+
+.sptlightScroller {
+	padding: 0.5rem 1.5rem;
+}
+
+.card, .mini-charts-item {
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+
+.card {
+    position: relative;
+    background: rgba(43, 52, 58, 0.02);
+    margin: 1rem;
+}
+
+.card.functionCard {
+    width: 90%;
+    height: 115px;
+    position: relative;
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+    background-color: #3b3d4e;
+}
+
+.card.functionCard.active {
+    border-right: medium #fff solid;
+}
+
+.card .card-header {
+    position: relative;
+    padding: 23px 25px;
+}
+
+.card.functionCard .card-header {
+    padding-bottom: 0;
+}
+
+.card .card-header h2.sideBarH2 {
+    margin: 0 !important;
+    line-height: 100% !important;
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    color: #D8DADA !important;
+    text-align: center !important;
+}
+
+.card.functionCard .card-header h2.sideBarH2 {
+    margin: 0 !important;
+    line-height: 100% !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.h1 small, .h2.sideBarH2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 small, h2.sideBarH2 small, h3 small, h4 small, h5 small, h6 small {
+    font-size: 12px;
+}
+
+.card .card-header h2.sideBarH2 small {
+    display: block;
+    margin-top: 5px;
+    line-height: 160%;
+    padding-top: 0.5rem;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.card.functionCard .card-header h2.sideBarH2 small {
+    color: #D8DADA;
+}
+
+.card.functionCard .card-body.card-padding {
+    color: rgba(255,255,255,.7);
+    padding: 5px 25px;
+    font-size: 13px;
+    position: absolute;
+    bottom: 5px;
+}
+
+.white-text {
+    color: #D8DADA !important;
+}
+
+.small, small {
+    font-size: 92%;
+}
+
+.functionCardStatus {
+    font-weight: 600 !important;
+    padding: 0 0.5rem !important;
+}
+
+.functionCardStatus:first-of-type {
+    padding-left: 0 !important;
+}
+
+.functionDetailsCard {
+    display: none;
+}
+
+.card.functionDetailsCard {
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: rgba(255,255,255,.7);
+    position: relative;
+    background-color: #3b3d4e;
+    margin-bottom: 30px;
+}
+
+.functionDetailsCard.active {
+    display: block;
+}
+
+.card.functionDetailsCard .card-header {
+    position: relative;
+    padding: 23px 25px;
+}
+
+.card.functionDetailsCard .card-header h2 {
+    margin: 0 !important;
+    line-height: 100% !important;
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+}
+
+.card.functionDetailsCard .card-header h2 small {
+    display: block !important;
+    margin-top: 5px !important;
+    line-height: 160% !important;
+    color: #D8DADA !important;
+}
+.card.functionDetailsCard .card-body.card-padding {
+    padding: 25px 27px;
+}
+.card.functionDetailsCard .card-header:not(.ch-alt):not([class*=bgm-])+.card-padding {
+    padding-top: 0;
+}
+
+.padding_step {
+    padding-left: 1.5rem !important;
+}
+.acrodeText {
+    color: rgba(255,255,255,.7);
+    padding: 10px 15px;
+    font-size: 13px;
+    position: relative;
+}
+
+.card.functionDetailsCard span.acrodeText {
+    padding: 0 !important;
+    padding-bottom: 0.5rem !important;
+    display: block;
+}
+
+.card.functionDetailsCard span.acrodeText i {
+    margin-right: 0.5rem;
+}
+
+.card.functionDetailsCard .panel-group {
+    margin-bottom: 18px;
+}
+
+.card.functionDetailsCard .panel-group .accordion .accordion-navigation > a, .card.functionDetailsCard .panel-group .accordion dd > a {
+    background-color: #2b343a !important;
+}
+
+.accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
+    background-color: rgb(51, 60, 66);
+    box-shadow: 0 1px 1px rgba(0,0,0,.5);
+}
+
+.accordion .accordion-navigation > a.white-text, .accordion .accordion-navigation.active > a.white-text {
+    color: #D8DADA;
+}
+
+.card.functionDetailsCard .panel-group .accordion .accordion-navigation > a.white-text, .card.functionDetailsCard .panel-group .accordion .accordion-navigation.active > a.white-text {
+    padding-left: 0;
+}
+
+.card.functionDetailsCard .panel-group .accordion .accordion-navigation > a:hover, .card.functionDetailsCard .panel-group .accordion dd > a:hover {
+    background-color: #2b343a;
+    box-shadow: none;
+    padding-left: 0;
+}
+
+
+
+/* acrodation */
+
+
+.ac-container{
+	width: 100%;
+	margin: 10px auto 30px auto;
+	text-align: left;
+}
+.ac-container label{  
+    z-index: 20;
+    height: 30px;
+    cursor: pointer;   
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;   
+    padding: 10px 15px;
+    font-size: 13px;
+    position: relative;
+    color: #D8DADA;
+    background-color: #3b3d4e;
+    box-shadow: none;
+    padding-left: 0;
+}
+.ac-container label:hover{
+	/*background: transparent;*/
+}
+.ac-container input:checked + label,
+.ac-container input:checked + label:hover{
+	/*background: transparent;*/
+	
+}
+.ac-container label:hover:after,
+.ac-container input:checked + label:hover:after{
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	right: 13px;
+	top: 7px;
+	background: transparent url(../img/arrow_down.png) no-repeat center center;	
+}
+.ac-container input:checked + label:hover:after{
+	background-image: url(../img/arrow_up.png);
+}
+.ac-container input{
+	display: none;
+}
+.ac-container article{
+	background: rgba(255, 255, 255, 0.5);
+	margin-top: -1px;
+	overflow: hidden;
+	height: 0px;
+	position: relative;
+	z-index: 10;
+	margin-left: 2rem;
+	background: #3b3d4e;
+	
+	font-size: 13px;
+    line-height: 1.42857143;
+    color: rgba(255,255,255,.7);   
+    border-top: 0!important;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top:15px;   
+    padding-bottom:15px;   
+    display:none;
+	height:auto;
+	/*-webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	-moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	-o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	-ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	transition: height 0.3s ease-in-out, box-shadow 0.6s linear;*/
+}
+.ac-container input:checked ~ article{
+	display:block;
+	/*-webkit-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	-moz-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	-o-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	-ms-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	transition: height 0.5s ease-in-out, box-shadow 0.1s linear;*/
+}
+.ac-container input:checked ~ article.ac-small{
+	min-height: 140px;
+}
+.ac-container input:checked ~ article.ac-medium{
+	min-height: 180px;
+}
+.ac-container input:checked ~ article.ac-large{
+	min-height: 230px;
+}
+
+.panel-group .functionStep {
+    padding-left: 0.5rem !important;
+}
+
+.padding_step {
+    padding-left: 1.5rem !important;
+}
+
+.acrodeText {
+    color: rgba(255,255,255,.7);
+    padding: 10px 15px;
+    font-size: 13px;
+    position: relative;
+}
+
+.card.functionDetailsCard .acrodeText {
+    padding: 0 !important;
+    padding-bottom: 0.5rem !important;
+    display: block;
+}
+
+.placer {
+    padding: 0.5rem !important;
+}
+
+.card.table {
+    margin: 0 !important;
+}
+
+.card.table .card-header {
+    position: relative !important;
+    padding: 5px 15px !important;
+}
+
+.card.table .card-header h2 {
+    font-size: 14px !important;
+    text-align: center !important;
+}
+
+.card.table .card-body.card-padding {
+    padding: 5px 7px !important;
+}
+
+.card.table .card-header:not(.ch-alt):not([class*=bgm-])+.card-padding {
+    padding-top: 5px !important;
+}
+
+pre code, table {
+    background-color: transparent !important;
+}
+
+.table {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.table {
+    margin-bottom: 0 !important;
+}
+
+.table.table-inner, .table>tbody>tr.active>td, .table>tbody>tr.danger>td, .table>tbody>tr.succes>td, .table>tbody>tr.warning>td, .table>tfoot>tr.active>td, .table>tfoot>tr.danger>td, .table>tfoot>tr.succes>td, .table>tfoot>tr.warning>td {
+    border: 0 !important;
+}
+
+
+td, th {
+	padding: 0 !important;
+}
+caption, th {
+	text-align: left !important;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+	line-height: 1.42857143 !important;
+	vertical-align: top !important;
+	border-top: 1px solid rgba(255,255,255,.02) !important;
+	padding: 4px !important;
+}
+.table>thead>tr>th {
+	border-bottom: 2px solid rgba(255,255,255,.02) !important;
+}
+.table>thead>tr>th {
+	background-color: rgba(255,255,255,.04) !important;
+	vertical-align: middle !important;
+	font-weight: 500 !important;
+	border-width: 1px !important;
+	text-transform: uppercase !important;
+}
+.table-vmiddle td {
+	vertical-align: middle !important;
+	color: rgba(255,255,255,.7) !important;
+	font-size: 10px !important;
+	line-height: 1.42857143 !important;
+	color: rgba(255,255,255,.7) !important;
+	font-weight: 400 !important;
+}
+pre code, table {
+	background-color: transparent !important;
+}
+table tr.even, table tr.alt, table tr:nth-of-type(even) {
+	background-color: transparent !important;
+}
+
+.table-vmiddle td {
+    vertical-align: middle !important;
+    color: rgba(255,255,255,.7) !important;
+    font-size: 10px !important;
+    line-height: 1.42857143 !important;
+    color: rgba(255,255,255,.7) !important;
+    font-weight: 400 !important;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    line-height: 1.42857143 !important;
+    vertical-align: top !important;
+    border-top: 1px solid rgba(255,255,255,.02) !important;
+    padding: 4px !important;
+}
+
+.img-tumb {
+    border: 1px solid #ddd  !important;
+    padding: 2px !important;
+    width: 150px !important;
+    margin: 0.5rem !important;
+    position: relative;
+    left: 2px;
+}
+
+input[type="checkbox"] + label, input[type="radio"] + label {
+	padding-bottom: 1.8rem;
+    border-bottom: thin #676565 solid;
+}
+
+.suteGroup {
+	display: none;
+}
+
+.suteGroup.active {
+	display: block;
+}
+
+
+
+
+
+
+
+

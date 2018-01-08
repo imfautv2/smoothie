@@ -1,0 +1,472 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>iMFAut | Execution Summary Report</title>
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/manifest.json">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="css/foundation.css" />
+<link rel="stylesheet" type="text/css" href="css/lity.css">
+<link rel="stylesheet" type="text/css"
+	href="css/jquery.fullpage.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script src="js/modernizr.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="fontawesome/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="row fullWidth">
+		<div class="large-12 columns max-width pad-zero">
+			<div id="fullpage">
+				<div class="section" id="section0">
+					<div class="row fullWidth">
+						<div class="large-12 columns">
+
+							<header id="header">
+								<h1 id="logo">
+									<a href="#">iMFAUT</a>
+								</h1>
+							</header>
+
+							<div id="banner" style="background-position: center 0px;">
+
+								<div class="summaryPage">
+
+									<div class="row" style="">
+										<div class="large-6 columns">
+
+											<div style="padding-left: 1.5rem; padding-right: 1.5rem; position: relative; top: 3.3rem;">
+
+												<canvas id="lineChartRender"></canvas>
+
+											</div>
+
+										</div>
+										<div class="large-6 columns">
+											<div class="row">
+												<div class="large-12 columns content">
+
+													<header>
+														<h2>iMFAUT</h2>
+														<p>Execution Summary Report.</p>
+													</header>
+
+												</div>
+											</div>
+											<div class="row" style="position: relative; top: -1.5rem;">
+												<div class="large-4 columns">
+													<canvas id="piPassChartRender"></canvas>
+												</div>
+												<div class="large-4 columns">
+													<canvas id="piFailChartRender"></canvas>
+												</div>
+												<div class="large-4 columns">
+													<canvas id="piPendingChartRender"></canvas>
+												</div>
+											</div>
+
+										</div>
+									</div>
+
+								</div>
+
+								<a href="#secondPage" class="goto-next scrolly"></a>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div id="section1" class="section">
+				
+					<div id="bannerDetails">
+						<div id="details" class="row fullWidth">
+						<div class="large-12 columns">
+							
+							<section class="wrapper style1 special fade-up">
+								<div class="container">
+									
+									<header class="major">
+										<h2>Execution Summary Details</h2>
+									</header>
+									
+									<div class="box alt">
+										
+										&Replace_MainContent_Replace&
+										
+									</div>
+									
+									
+								</div>
+							</section>
+							
+						</div>
+					</div>
+					
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery.js"></script>
+	<script src="js/foundation.min.js"></script>
+	<script src="js/foundation.orbit.js"></script>
+	<script src="js/jquery.fullPage.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/Chart.bundle.min.js"></script>
+	<script src="js/lity.js"></script>
+	<script src="js/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="js/scrolloverflow.js"></script>
+	<script type="text/javascript">
+		$(document).foundation();
+		$(document).ready( function(e) {
+			
+			$('.spotlight').css("height", ($('#banner').height()-$('.major').height()-100)+"px");
+			
+			$('.sptlightScroller').slimScroll({
+				
+				height: ($('#banner').height()-$('.major').height()-190)+'px'
+				
+			});
+			
+			$('.sptlightScrollerX').slimScroll({
+				
+				height: ($('#banner').height()-$('.major').height()-190)+'px'
+				
+			});
+			
+			$(document).on('click','.functionCard',function(e){
+				console.log($(this).data('group'));
+				$('.suteGroup').removeClass('active');
+				$('.functionCard').removeClass('active');
+				$(this).addClass('active');
+				$('.suteGroup[data-group="'+$(this).data('group')+'"]').addClass('active');
+				
+			});
+			
+							$('#fullpage').fullpage({
+								anchors: ['firstPage', 'secondPage'],
+							});
+							
+							var ctxGraph = document.getElementById(
+									'lineChartRender').getContext('2d');
+							var passCtx = document.getElementById(
+									'piPassChartRender').getContext('2d');
+							var failCtx = document.getElementById(
+									'piFailChartRender').getContext('2d');
+							var pendingCtx = document.getElementById(
+									'piPendingChartRender').getContext('2d');
+
+							var lineChartData = {
+								labels : [ &Replace_dateArString_Replace& ],
+								datasets : [ {
+									label : "Passed",
+									borderColor : chartColors.green,
+									backgroundColor : chartColors.green,
+									fill : false,
+									data : [ &Replace_passCountArString_Replace& ],
+									yAxisID : "y-axis-1",
+								}, {
+									label : "Failed",
+									borderColor : chartColors.red,
+									backgroundColor : chartColors.red,
+									fill : false,
+									data : [ &Replace_failCountArString_Replace& ],
+									yAxisID : "y-axis-2"
+								}, {
+									label : "Pending",
+									borderColor : chartColors.orange,
+									backgroundColor : chartColors.orange,
+									fill : false,
+									data : [ &Replace_pendCountArString_Replace& ],
+									yAxisID : "y-axis-3"
+								} ]
+							};
+
+							myLine = Chart.Line(ctxGraph, {
+								data : lineChartData,
+								options : {
+									responsive : true,
+									animation : {
+										easing : "linear",
+									},
+									hoverMode : 'index',
+									stacked : false,
+									maintainAspectRatio : true,
+									labelFontColor : "red",
+									scaleFontColor : "#FFFFFF",
+									title : {
+										display : false,
+										text : 'Execution Summary',
+										fontColor : "white",
+									},
+									legend : {
+										labels : {
+											fontColor : "white",
+											padding : 28,
+										},
+										position: 'bottom',
+									},
+									scales : {
+										xAxes : [ {
+											ticks : {
+												fontColor : 'white'
+											},
+										} ],
+										yAxes : [ {
+											type : "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+											display : true,
+											labelFontColor : "#FFFFFF",
+											scaleFontColor : "#FFFFFF",
+											position : "left",
+											id : "y-axis-1",
+											ticks : {
+												beginAtZero : true,
+												userCallback: function(label, index, labels) {
+								                     // when the floored value is the same as the value we have a whole number
+								                     if (Math.floor(label) === label) {
+								                         return label;
+								                     }
+
+								                 },
+												fontColor : 'white'
+											},
+										}, {
+											type : "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+											display : false,
+											position : "right",
+											scaleFontColor : "#FFFFFF",
+											id : "y-axis-2",
+											ticks : {
+												beginAtZero : false
+											},
+											gridLines : {
+												drawOnChartArea : false, // only want the grid lines for one axis to show up
+											},
+										}, {
+											type : "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+											display : false,
+											position : "right",
+											scaleFontColor : "#FFFFFF",
+											id : "y-axis-3",
+											ticks : {
+												beginAtZero : false
+											},
+											// grid line settings
+											gridLines : {
+												drawOnChartArea : false, // only want the grid lines for one axis to show up
+											},
+										} ],
+									}
+								}
+							});
+
+							myPendingChart = new Chart(pendingCtx, {
+								type : 'doughnut',
+								data : {
+									labels : [ "", "" ],
+									datasets : [ {
+										label : '# of Votes',
+										data : [ &Replace_PendingPerString_Replace& ],
+										backgroundColor : [
+												'rgba(255, 168, 97, 0.2)',
+												'rgba(54, 162, 235, 0.2)' ],
+										borderColor : [ 'rgba(255, 168, 97,1)',
+												'rgba(54, 162, 235, 1)' ],
+										borderWidth : 1
+									} ]
+								},
+								options : {
+									rotation : 1 * Math.PI,
+									circumference : 1 * Math.PI,
+									title : {
+										display : true,
+										text : "Pending Cases",
+										fontColor : "#bfbdbd",
+										padding : -35,
+										position : "bottom",
+									},
+									legend : {
+										display : false
+									},
+									tooltips : {
+										enabled : false
+									},
+									elements : {
+										center : {
+											text : '&Replace_PendingTotalString_Replace&',
+											color : '#FFFFFF', //Default black
+											fontStyle : 'Helvetica', //Default Arial
+											sidePadding : 15
+										//Default 20 (as a percentage)
+										}
+									},
+								}
+							});
+
+							myFailChart = new Chart(failCtx, {
+								type : 'doughnut',
+								data : {
+									labels : [ "", "" ],
+									datasets : [ {
+										label : '# of Votes',
+										data : [ &Replace_FailPerString_Replace& ],
+										backgroundColor : [
+												'rgba(255, 99, 132, 0.2)',
+												'rgba(54, 162, 235, 0.2)' ],
+										borderColor : [ 'rgba(255,99,132,1)',
+												'rgba(54, 162, 235, 1)' ],
+										borderWidth : 1
+									} ]
+								},
+								options : {
+									rotation : 1 * Math.PI,
+									circumference : 1 * Math.PI,
+									title : {
+										display : true,
+										text : "Failed Cases",
+										fontColor : "#bfbdbd",
+										padding : -35,
+										position : "bottom",
+									},
+									legend : {
+										display : false
+									},
+									tooltips : {
+										enabled : false
+									},
+									elements : {
+										center : {
+											text : '&Replace_FailTotalString_Replace&',
+											color : '#FFFFFF', //Default black
+											fontStyle : 'Helvetica', //Default Arial
+											sidePadding : 15
+										//Default 20 (as a percentage)
+										}
+									},
+								}
+							});
+
+							myPassChart = new Chart(passCtx, {
+								type : 'doughnut',
+								data : {
+									labels : [ "", "" ],
+									datasets : [ {
+										label : '# of Votes',
+										data : [ &Replace_PassPerString_Replace& ],
+										backgroundColor : [
+												'rgba(98, 255, 101, 0.2)',
+												'rgba(54, 162, 235, 0.2)' ],
+										borderColor : [ 'rgba(98, 255, 101,1)',
+												'rgba(54, 162, 235, 1)' ],
+										borderWidth : 1
+									} ]
+								},
+								options : {
+									rotation : 1 * Math.PI,
+									circumference : 1 * Math.PI,
+									title : {
+										display : true,
+										text : "Passed Cases",
+										fontColor : "#bfbdbd",
+										padding : -35,
+										position : "bottom",
+									},
+									legend : {
+										display : false
+									},
+									tooltips : {
+										enabled : false
+									},
+									elements : {
+										center : {
+											text : '&Replace_PassTotalString_Replace&',
+											color : '#FFFFFF', //Default black
+											fontStyle : 'Helvetica', //Default Arial
+											sidePadding : 15
+										//Default 20 (as a percentage)
+										}
+									},
+								}
+							});
+
+							Chart.pluginService
+									.register({
+										beforeDraw : function(chart) {
+											if (chart.config.options.elements.center) {
+												//Get ctx from string
+												var ctx = chart.chart.ctx;
+
+												//Get options from the center object in options
+												var centerConfig = chart.config.options.elements.center;
+												var fontStyle = centerConfig.fontStyle
+														|| 'Arial';
+												var txt = centerConfig.text;
+												var color = centerConfig.color
+														|| '#000';
+												var sidePadding = centerConfig.sidePadding || 20;
+												var sidePaddingCalculated = (sidePadding / 100)
+														* (chart.innerRadius * 2)
+												//Start with a base font of 30px
+												ctx.font = "5px " + fontStyle;
+
+												//Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+												var stringWidth = ctx
+														.measureText(txt).width;
+												var elementWidth = (chart.innerRadius * 2)
+														- sidePaddingCalculated;
+
+												// Find out how much the font can grow in width.
+												var widthRatio = elementWidth
+														/ stringWidth;
+												var newFontSize = Math
+														.floor(5 * widthRatio);
+												var elementHeight = (chart.innerRadius * 2);
+
+												// Pick a new font size so it will not be larger than the height of label.
+												var fontSizeToUse = Math.min(
+														newFontSize,
+														elementHeight) / 2.5;
+
+												//Set font settings to draw it correctly.
+												ctx.textAlign = 'center';
+												ctx.textBaseline = 'middle';
+												var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+												var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 1.5);
+												ctx.font = fontSizeToUse
+														+ "px " + fontStyle;
+												ctx.fillStyle = color;
+
+												//Draw text in center
+												ctx.fillText(txt, centerX,
+														centerY);
+											}
+										},
+										
+
+									});
+							
+							
+
+						});
+
+		
+
+		chartColors = {
+			red : 'rgb(255, 99, 132)',
+			orange : 'rgb(255, 159, 64)',
+			yellow : 'rgb(255, 205, 86)',
+			green : 'rgb(75, 192, 192)',
+			blue : 'rgb(54, 162, 235)',
+			purple : 'rgb(153, 102, 255)',
+			grey : 'rgb(201, 203, 207)'
+		};
+	</script>
+</body>
+</html>
